@@ -1,6 +1,7 @@
 package com.electronicwebshop.model;
 
 public class Proizvod {
+    private String proizvodId;
     private String nazivProizvoda;
     private String kategorijaProizvoda;
     private String opisProizvoda;
@@ -10,6 +11,14 @@ public class Proizvod {
     private int proizvodaNaSkladistu;
     private String proizvodac;
 
+
+    public String getProizvodId() {
+        return proizvodId;
+    }
+
+    public void setProizvodId(String productId) {
+        this.proizvodId = productId;
+    }
     public String getNazivProizvoda() {
         return nazivProizvoda;
     }
