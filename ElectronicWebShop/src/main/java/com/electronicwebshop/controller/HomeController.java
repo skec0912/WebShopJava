@@ -2,6 +2,7 @@ package com.electronicwebshop.controller;
 
 import com.electronicwebshop.dal.ProizvodDal;
 import com.electronicwebshop.model.Proizvod;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +14,8 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    private ProizvodDal proizvodDal = new ProizvodDal();
+    @Autowired
+    private ProizvodDal proizvodDal;
 
     @RequestMapping("/")
     public String home(){
@@ -23,7 +25,7 @@ public class HomeController {
     @RequestMapping("/listaProizvoda")
     public String dohvatiProizvode(Model model){
 
-        List<Proizvod> proizvodi = proizvodDal.getListuProizvoda();
+        List<Proizvod> proizvodi = proizvodDal.getAllProizvod();
         model.addAttribute("proizvodi",proizvodi);
 
         return "listaProizvoda"; //naziv viewa koji se poziva
