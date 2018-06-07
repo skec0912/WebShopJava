@@ -38,4 +38,28 @@ public class HomeController {
 
         return "detaljiProizvoda";
     }
+
+    @RequestMapping("/admin")
+    public String adminPage(){
+        return "admin";
+    }
+
+    @RequestMapping("/admin/popisProizvoda")
+    public String popisProizvoda(Model model){
+        List<Proizvod> proizvodi = proizvodDal.getAllProizvod();
+        model.addAttribute("proizvodi",proizvodi);
+        return "popisProizvoda";
+    }
+
+    @RequestMapping("/admin/popisProizvoda/dodajProizvod")
+    public String dodajProizvod(Model model){
+        Proizvod proizvod = new Proizvod();
+        proizvod.setKategorijaProizvoda("Mobiteli");
+        proizvod.setStanjeProizvoda("Novo");
+        proizvod.setStatusProizvoda("Active");
+
+        model.addAttribute("proizvod",proizvod);
+        return "dodajProizvod";
+    }
+
 }
