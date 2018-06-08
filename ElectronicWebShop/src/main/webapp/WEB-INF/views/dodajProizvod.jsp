@@ -6,9 +6,9 @@
         <div class="page-header">
             <h1>Dodaj proizvod</h1>
         </div>
+        <p>Unesite pojedinosti o proizvodu</p>
 
-
-        <form:form action="" method="post" commandName="proizvod">
+        <form:form action="${pageContext.request.contextPath}/admin/popisProizvoda/dodajProizvod" method="post" commandName="proizvod" enctype="multipart/form-data">
         <div class="form-group">
             <label for="naziv">Naziv:</label>
             <form:input path="nazivProizvoda" id="naziv" cssClass="form-control"/>
@@ -19,6 +19,7 @@
             <label class="checkbox-inline"><form:radiobutton checked="true" path="kategorijaProizvoda" id="kategorija" value="Televizori"/>Televizori</label>
             <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Monitori"/>Monitori </label>
             <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Mobiteli"/>Mobiteli</label>
+            <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Laptopi"/>Laptopi</label>
         </div>
 
         <div class="form-group">
@@ -53,6 +54,15 @@
             <label for="proizvodac">Proizvodac:</label>
             <form:input path="proizvodac" id="proizvodac" cssClass="form-control"/>
         </div>
+
+        <div class="form-group">
+            <label class="control-label" for="slika">Dodaj sliku</label>
+            <form:input path="slika" type="file" id="slika" cssClass="form-input"/>
+        </div>
+
+        <br><br>
+        <input type="submit" value="Potvrdi" class="btn btn-default">
+        <a href="<c:url value="/admin/popisProizvoda"/>" class="btn btn-default">Ponisti</a>
 
     </form:form>
 

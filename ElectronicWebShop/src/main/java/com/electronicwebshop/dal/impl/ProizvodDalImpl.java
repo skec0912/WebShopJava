@@ -25,6 +25,13 @@ public class ProizvodDalImpl implements ProizvodDal {
         session.flush();
     }
 
+    public void editProizvod(Proizvod proizvod) {
+
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(proizvod);
+        session.flush();
+    }
+
     public Proizvod getProizvodById(String proizvodId) {
         Session session = sessionFactory.getCurrentSession();
         Proizvod proizvod = (Proizvod) session.get(Proizvod.class, proizvodId);

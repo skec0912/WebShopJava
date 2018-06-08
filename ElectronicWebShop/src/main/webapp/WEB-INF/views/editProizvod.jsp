@@ -4,14 +4,14 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Dodaj proizvod</h1>
+            <h1>Uredi proizvod</h1>
         </div>
+        <p class="lead">Uredite pojedinosti o proizvodu</p>
 
-
-        <form:form action="" method="post" commandName="proizvod">
+        <form:form action="${pageContext.request.contextPath}/admin/popisProizvoda/editProizvod" method="post" commandName="proizvod" enctype="multipart/form-data">
         <div class="form-group">
             <label for="naziv">Naziv:</label>
-            <form:input path="nazivProizvoda" id="naziv" cssClass="form-control"/>
+            <form:input path="nazivProizvoda" id="naziv" cssClass="form-control" value="${proizvod.nazivProizvoda}"/>
         </div>
 
         <div class="form-group">
@@ -19,16 +19,17 @@
             <label class="checkbox-inline"><form:radiobutton checked="true" path="kategorijaProizvoda" id="kategorija" value="Televizori"/>Televizori</label>
             <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Monitori"/>Monitori </label>
             <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Mobiteli"/>Mobiteli</label>
+            <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Laptopi"/>Laptopi</label>
         </div>
 
         <div class="form-group">
             <label for="opis">Opis:</label>
-            <form:input path="opisProizvoda" id="opis" cssClass="form-control"/>
+            <form:input path="opisProizvoda" id="opis" cssClass="form-control" value="${proizvod.opisProizvoda}"/>
         </div>
 
         <div class="form-group">
             <label for="cijena">Cijena:</label>
-            <form:input path="cijena" id="cijena" cssClass="form-control"/>
+            <form:input path="cijena" id="cijena" cssClass="form-control" value="${proizvod.cijena}"/>
         </div>
         <div class="form-group">
             <label for="stanjeProizvoda">Stanje proizvoda:</label>
@@ -39,27 +40,30 @@
         <div class="form-group">
             <label for="statusProizvoda">Status proizvoda:</label>
             <label class="checkbox-inline">
-                <form:radiobutton checked="true" path="statusProizvoda" id="active" value="Active"/>
-                Aktivan
-            </label>
+                <form:radiobutton checked="true" path="statusProizvoda" id="active" value="Active"/>Aktivan</label>
             <label class="checkbox-inline">
-                <form:radiobutton path="statusProizvoda" id="neaktivan" value="neaktivan"/>
-                Ne aktivan
-            </label>
+                <form:radiobutton path="statusProizvoda" id="neaktivan" value="neaktivan"/>Ne aktivan</label>
         </div>
 
         <div class="form-group">
             <label for="proizvodaNaSkladistu">Kolicina proizvoda na skladistu:</label>
-            <form:input path="proizvodaNaSkladistu" id="proizvodaNaSkladistu" cssClass="form-control"/>
+            <form:input path="proizvodaNaSkladistu" id="proizvodaNaSkladistu" cssClass="form-control" value="${proizvod.statusProizvoda}"/>
         </div>
 
         <div class="form-group">
             <label for="proizvodac">Proizvodac:</label>
-            <form:input path="proizvodac" id="proizvodac" cssClass="form-control"/>
+            <form:input path="proizvodac" id="proizvodac" cssClass="form-control" value="${proizvod.proizvodac}"/>
         </div>
 
+        <div class="form-group">
+            <label class="control-label" for="slika">Dodaj sliku</label>
+            <form:input path="slika" type="file" id="slika" cssClass="form-input"/>
+        </div>
 
+        <br><br>
+        <input type="submit" value="Potvrdi" class="btn btn-default">
+        <a href="<c:url value="/admin/popisProizvoda"/>" class="btn btn-default">Ponisti</a>
 
-    </form:form>
+        </form:form>
 
         <%@include file="/WEB-INF/views/template/footer.jsp" %>

@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <title>
+        <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
         <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
         <%@include file="/WEB-INF/views/template/header.jsp" %>
 
@@ -30,19 +31,27 @@
                     </thead>
                     <c:forEach items="${proizvodi}" var="proizvod">
                         <tr>
-                            <td><img src="#" alt="image"/></td>
+                            <td><img src="<c:url value="/resources/slike/${proizvod.proizvodId}.png" />" alt="image" style="width:100%"/></td>
                             <td>${proizvod.nazivProizvoda}</td>
                             <td>${proizvod.kategorijaProizvoda}</td>
                             <td>${proizvod.stanjeProizvoda}</td>
                             <td>${proizvod.cijena} KN</td>
                             <td><a href="<spring:url value='/listaProizvoda/proizvod/${proizvod.proizvodId}'/>">
                                 <span class="glyphicon glyphicon-info-sign"/>
-                            </a>
+                                </a>
+                                <a href="<spring:url value='/admin/popisProizvoda/deleteProizvod/${proizvod.proizvodId}'/>">
+                                    <span class="glyphicon glyphicon-remove"/>
+                                </a>
+
+                                <a href="<spring:url value='/admin/popisProizvoda/editProizvod/${proizvod.proizvodId}'/>">
+                                    <span class="glyphicon glyphicon-pencil"/>
+                                </a>
                             </td>
                         </tr>
                     </c:forEach>
                 </table>
-                <a href="<spring:url value="/admin/popisProizvoda/dodajProizvod"/>" class="btn btn-primary">Dodaj proizvod</a>
+                <a href="<spring:url value="/admin/popisProizvoda/dodajProizvod"/>" class="btn btn-primary">Dodaj
+                    proizvod</a>
                 <%@include file="/WEB-INF/views/template/footer.jsp" %>
     </title>
 </head>

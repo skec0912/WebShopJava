@@ -1,9 +1,8 @@
 package com.electronicwebshop.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
 
 @Entity
 public class Proizvod {
@@ -19,6 +18,16 @@ public class Proizvod {
     private int proizvodaNaSkladistu;
     private String proizvodac;
 
+    @Transient
+    private MultipartFile slika;
+
+    public MultipartFile getSlika() {
+        return slika;
+    }
+
+    public void setSlika(MultipartFile slika) {
+        this.slika = slika;
+    }
 
     public String getProizvodId() {
         return proizvodId;
