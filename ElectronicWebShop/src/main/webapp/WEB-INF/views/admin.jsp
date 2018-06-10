@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-header">
             <h1>Dobrodosao Administratore :)</h1>
-            <p class="lead">Ovo je stranica za administrare ducana</p>
+            <p class="lead">Ovo je stranica za administratore ducana</p>
         </div>
 
         <h3>

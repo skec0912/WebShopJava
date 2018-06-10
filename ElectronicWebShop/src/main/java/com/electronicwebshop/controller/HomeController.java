@@ -4,8 +4,10 @@ import com.electronicwebshop.dal.ProizvodDal;
 import com.electronicwebshop.model.Proizvod;
 import com.sun.org.apache.xpath.internal.operations.Mult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -43,7 +46,7 @@ public class HomeController {
     }
 
     @RequestMapping("/listaProizvoda/proizvod/{proizvodId}")
-    public String dohvatiProizvod(@PathVariable String proizvodId, Model model) throws IOException {
+    public String dohvatiProizvod(@PathVariable String proizvodId, Model model) {
         Proizvod proizvod = proizvodDal.getProizvodById(proizvodId);
         model.addAttribute(proizvod);
 
@@ -74,7 +77,11 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/admin/popisProizvoda/dodajProizvod", method = RequestMethod.POST)
-    public String dodajProizvodPost(@ModelAttribute("proizvod") Proizvod proizvod, HttpServletRequest request) {
+    public String dodajProizvodPost(@Valid @ModelAttribute("proizvod") Proizvod proizvod, HttpServletRequest request, BindingResult result) {
+
+       if(result.hasErrors()){
+           return "dodajProizvod";
+       }
         proizvodDal.addProizvod(proizvod);
 
         MultipartFile slikaProizvoda = proizvod.getSlika();
@@ -112,6 +119,7 @@ public class HomeController {
 
     @RequestMapping("/admin/popisProizvoda/editProizvod/{id}")
     public String editProizvod(@PathVariable String id, Model model) {
+
         Proizvod proizvod = proizvodDal.getProizvodById(id);
 
         model.addAttribute(proizvod);
@@ -121,7 +129,11 @@ public class HomeController {
 
 
     @RequestMapping(value = "/admin/popisProizvoda/editProizvod", method = RequestMethod.POST)
-    public String editProizvod(@PathVariable ("proizvod") Proizvod proizvod, Model model, HttpServletRequest request) {
+    public String editProizvodPost(@Valid @ModelAttribute("proizvod") Proizvod proizvod, Model model, HttpServletRequest request, BindingResult result) {
+
+        if(result.hasErrors()){
+            return "editProizvod";
+        }
 
         MultipartFile slikaProizvoda = proizvod.getSlika();
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");

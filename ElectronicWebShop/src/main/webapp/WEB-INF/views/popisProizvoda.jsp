@@ -1,19 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Andrej
-  Date: 6/7/2018
-  Time: 19:13
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@include file="/WEB-INF/views/template/header.jsp" %>
 <html>
 <head>
-    <title>
-        <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-        <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-        <%@include file="/WEB-INF/views/template/header.jsp" %>
-
-        <div class="container-wrapper">
+</head>
+<body>
+    <div class="container-wrapper">
             <div class="container">
                 <div class="page-header">
                     <h1>Popis proizvoda</h1>
@@ -53,9 +46,7 @@
                 <a href="<spring:url value="/admin/popisProizvoda/dodajProizvod"/>" class="btn btn-primary">Dodaj
                     proizvod</a>
                 <%@include file="/WEB-INF/views/template/footer.jsp" %>
-    </title>
-</head>
-<body>
+
 
 </body>
 </html>

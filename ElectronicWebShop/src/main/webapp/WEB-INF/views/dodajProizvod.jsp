@@ -10,14 +10,13 @@
 
         <form:form action="${pageContext.request.contextPath}/admin/popisProizvoda/dodajProizvod" method="post" commandName="proizvod" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="naziv">Naziv:</label>
+            <label for="naziv">Naziv:</label><form:errors path="nazivProizvoda" cssStyle="color:red;"/>
             <form:input path="nazivProizvoda" id="naziv" cssClass="form-control"/>
         </div>
 
         <div class="form-group">
             <label for="kategorija">Kategorija:</label>
             <label class="checkbox-inline"><form:radiobutton checked="true" path="kategorijaProizvoda" id="kategorija" value="Televizori"/>Televizori</label>
-            <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Monitori"/>Monitori </label>
             <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Mobiteli"/>Mobiteli</label>
             <label class="checkbox-inline"><form:radiobutton path="kategorijaProizvoda" id="kategorija" value="Laptopi"/>Laptopi</label>
         </div>
@@ -28,11 +27,11 @@
         </div>
 
         <div class="form-group">
-            <label for="cijena">Cijena:</label>
+            <label for="cijena">Cijena:</label><form:errors path="cijena" cssStyle="color:red;"/>
             <form:input path="cijena" id="cijena" cssClass="form-control"/>
         </div>
         <div class="form-group">
-            <label for="stanjeProizvoda">Stanje proizvoda:</label>
+            <label for="stanjeProizvoda">Stanje proizvoda:</label><form:errors path="stanjeProizvoda" cssStyle="color:red;"/>
             <label class="checkbox-inline"><form:radiobutton checked="true" path="stanjeProizvoda" id="novo" value="novo"/>Novo</label>
             <label class="checkbox-inline"><form:radiobutton path="stanjeProizvoda" id="koristeno" value="koristeno"/>Koristeno </label>
         </div>
