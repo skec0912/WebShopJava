@@ -10,7 +10,8 @@
 
         <form:form action="${pageContext.request.contextPath}/admin/popisProizvoda/dodajProizvod" method="post" commandName="proizvod" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="naziv">Naziv:</label><form:errors path="nazivProizvoda" cssStyle="color:red;"/>
+            <label for="naziv">Naziv:</label>
+            <form:errors path="nazivProizvoda" cssStyle="color:red;"/>
             <form:input path="nazivProizvoda" id="naziv" cssClass="form-control"/>
         </div>
 

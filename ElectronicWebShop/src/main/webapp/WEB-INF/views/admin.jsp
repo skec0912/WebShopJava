@@ -1,3 +1,4 @@
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
 <div class="container-wrapper">
@@ -12,6 +13,5 @@
         </h3>
 
         <p>Ovdje mozete pregledavati, kontrolirati i prilagodavati popis proizvoda!</p>
-
 
         <%@include file="/WEB-INF/views/template/footer.jsp" %>

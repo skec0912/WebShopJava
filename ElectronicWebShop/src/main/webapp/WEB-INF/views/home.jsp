@@ -18,7 +18,6 @@
                 <div class="carousel-caption">
                     <h1>Zelite li najbolje performanse po najnizim cijenama? </h1>
                     <p>U danasnje vrijeme je vrlo tesko izabrati pravi laptop. Zbog toga smo za Vas pripremili bogatu ponudu uredaja po pristupacnim cijenama i performansama primjerenima zahtjevima svakog korisnika, bilo da se radi o uredaju za surfanje, posao ili gaming.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                 </div>
             </div>
         </div>
@@ -28,7 +27,6 @@
                 <div class="carousel-caption">
                     <h1>Jos uvijek nemate smartphone? Na pravom ste mjestu.</h1>
                     <p>Najbolji omjer cijene i kvalitete baz obzira da li trazite uredaj sa osnovnim funkcijama ili napredniji uredaj s mnostvom korisnih funkcija i aplikacija.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                 </div>
             </div>
         </div>
@@ -38,7 +36,6 @@
                 <div class="carousel-caption">
                     <h1>Velika ponuda televizora</h1>
                     <p>Televizori u nasoj ponudi su savrseni spoj performansi, dizajna i prihvatljive cijene. Uz velik izbor televizora razlicitih dijagonala, boja i performansa svatko ce pronaci svoj model.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
                 </div>
             </div>
         </div>

@@ -19,9 +19,10 @@
 
     <title>E-Web Shop</title>
 
-    <link href="<c:url value='/resources/css/bootstrap.min.css'/>" rel="stylesheet">
-    <link href="<c:url value='/resources/css/carousel.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet">
+    <link href="<c:url value='/resources/css/carousel.css'/>" rel="stylesheet">
+    <link href="<c:url value='/resources/css/bootstrap.min.css'/>" rel="stylesheet">
+
 
 </head>
 <!-- NAVBAR
@@ -49,7 +50,7 @@
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">
-                        <li><a href="<c:url value="/admin"/>"/>Admin</li>
+                        <li><a href="<c:url value="/admin"/>">Admin</a></li>
                     </ul>
                 </div>
             </div>

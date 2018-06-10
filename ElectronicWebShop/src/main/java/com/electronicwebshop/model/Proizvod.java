@@ -2,7 +2,6 @@ package com.electronicwebshop.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 
@@ -12,7 +11,7 @@ public class Proizvod {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String proizvodId;
 
-    @NotEmpty (message = "Naziv proizvoda je obavezno polje!")
+    @NotEmpty(message = "Naziv proizvoda je obavezno polje!")
     private String nazivProizvoda;
 
     private String kategorijaProizvoda;
@@ -20,11 +19,13 @@ public class Proizvod {
 
     @Min(value=0, message = "Cijena mora biti veća od 0!")
     private double cijena;
+
     private String stanjeProizvoda;
     private String statusProizvoda;
 
     @Min(value=0, message = "Kolicina mora biti veća od 0!")
     private int proizvodaNaSkladistu;
+
     private String proizvodac;
 
     @Transient
