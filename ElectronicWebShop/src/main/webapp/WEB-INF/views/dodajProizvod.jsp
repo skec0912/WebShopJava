@@ -47,7 +47,7 @@
 
         <div class="form-group">
             <label for="proizvodaNaSkladistu">Kolicina proizvoda na skladistu:</label>
-            <form:input path="proizvodaNaSkladistu" id="proizvodaNaSkladistu" cssClass="form-control"/>
+            <form:input path="proizvodaNaSkladistu" id="proizvodaNaSkladistu" cssClass="form-control"/> <form:errors path="proizvodaNaSkladistu" cssStyle="color:red;"/>
         </div>
 
         <div class="form-group">
