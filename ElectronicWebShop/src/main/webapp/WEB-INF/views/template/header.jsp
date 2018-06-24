@@ -19,6 +19,8 @@
 
     <title>E-Web Shop</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+
     <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/css/carousel.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/css/bootstrap.min.css'/>" rel="stylesheet">

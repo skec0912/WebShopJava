@@ -3,7 +3,7 @@
 <div class="container-wrapper">
     <div class="container">
         <div id="login-box">
-            <h2>Unesite svoje korisničko ime i lozinku</h2>
+            <h2>Unesite svoje korisnicko ime i lozinku</h2>
 
             <c:if test="${not empty msg}">
                 <div class="msg">${msg}</div>
