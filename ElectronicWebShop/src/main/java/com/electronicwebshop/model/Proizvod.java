@@ -17,7 +17,7 @@ public class Proizvod implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String proizvodId;
+    private int proizvodId;
 
     @NotEmpty(message = "Naziv proizvoda je obavezno polje!")
     private String nazivProizvoda;
@@ -51,11 +51,11 @@ public class Proizvod implements Serializable {
         this.slika = slika;
     }
 
-    public String getProizvodId() {
+    public int getProizvodId() {
         return proizvodId;
     }
 
-    public void setProizvodId(String productId) {
+    public void setProizvodId(int productId) {
         this.proizvodId = productId;
     }
 

@@ -26,7 +26,7 @@
                     <td>${proizvod.kategorijaProizvoda}</td>
                     <td>${proizvod.stanjeProizvoda}</td>
                     <td>${proizvod.cijena} KN</td>
-                    <td><a href="<spring:url value='/listaProizvoda/proizvod/${proizvod.proizvodId}'/>">
+                    <td><a href="<spring:url value='/proizvod/detaljiProizvoda/${proizvod.proizvodId}'/>">
                             <span class="glyphicon glyphicon-info-sign"/>
                         </a>
                     </td>

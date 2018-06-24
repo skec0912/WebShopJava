@@ -29,21 +29,21 @@
                             <td>${proizvod.kategorijaProizvoda}</td>
                             <td>${proizvod.stanjeProizvoda}</td>
                             <td>${proizvod.cijena} KN</td>
-                            <td><a href="<spring:url value='/listaProizvoda/proizvod/${proizvod.proizvodId}'/>">
+                            <td><a href="<spring:url value='/proizvod/detaljiProizvoda/${proizvod.proizvodId}'/>">
                                 <span class="glyphicon glyphicon-info-sign"/>
                                 </a>
-                                <a href="<spring:url value='/admin/popisProizvoda/deleteProizvod/${proizvod.proizvodId}'/>">
+                                <a href="<spring:url value='/admin/proizvod/deleteProizvod/${proizvod.proizvodId}'/>">
                                     <span class="glyphicon glyphicon-remove"/>
                                 </a>
 
-                                <a href="<spring:url value='/admin/popisProizvoda/editProizvod/${proizvod.proizvodId}'/>">
+                                <a href="<spring:url value='/admin/proizvod/editProizvod/${proizvod.proizvodId}'/>">
                                     <span class="glyphicon glyphicon-pencil"/>
                                 </a>
                             </td>
                         </tr>
                     </c:forEach>
                 </table>
-                <a href="<spring:url value="/admin/popisProizvoda/dodajProizvod"/>" class="btn btn-primary">Dodaj
+                <a href="<spring:url value="/admin/proizvod/addProizvod"/>" class="btn btn-primary">Dodaj
                     proizvod</a>
                 <%@include file="/WEB-INF/views/template/footer.jsp" %>
 

@@ -8,7 +8,7 @@
         </div>
         <p>Unesite pojedinosti o proizvodu</p>
 
-        <form:form action="${pageContext.request.contextPath}/admin/popisProizvoda/dodajProizvod" method="post" commandName="proizvod" enctype="multipart/form-data">
+        <form:form action="${pageContext.request.contextPath}/admin/proizvod/addProizvod" method="post" commandName="proizvod" enctype="multipart/form-data">
         <div class="form-group">
             <label for="naziv">Naziv:</label>
             <form:errors path="nazivProizvoda" cssStyle="color:red;"/>
