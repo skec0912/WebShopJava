@@ -48,7 +48,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="<c:url value="/"/>">Home</a></li>
-                        <li><a href="<c:url value="/listaProizvoda"/>">Proizvodi</a></li>
+                        <li><a href="<c:url value="/proizvod/listaProizvoda"/>">Proizvodi</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">

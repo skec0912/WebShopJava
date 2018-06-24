@@ -5,9 +5,9 @@ import com.electronicwebshop.model.Proizvod;
 import java.util.List;
 
 public interface ProizvodDal {
+    List<Proizvod> getProizvodList();
+    Proizvod getProizvodById(int id);
     void addProizvod(Proizvod proizvod);
     void editProizvod(Proizvod proizvod);
-    Proizvod getProizvodById(String proizvodId);
-    List<Proizvod> getAllProizvod();
-    void deleteProizvod(String id);
+    void deleteProizvod(Proizvod proizvod);
 }

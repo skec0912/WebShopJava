@@ -1,12 +1,20 @@
 package com.electronicwebshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
-public class Proizvod {
+public class Proizvod implements Serializable {
+
+
+    private static final long serialVersionUID = -8450393015048052000L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String proizvodId;
@@ -17,19 +25,23 @@ public class Proizvod {
     private String kategorijaProizvoda;
     private String opisProizvoda;
 
-    @Min(value=0, message = "Cijena mora biti veća od 0!")
+    @Min(value = 0, message = "Cijena mora biti veća od 0!")
     private double cijena;
 
     private String stanjeProizvoda;
     private String statusProizvoda;
 
-    @Min(value=0, message = "Kolicina mora biti veća od 0!")
+    @Min(value = 0, message = "Kolicina mora biti veća od 0!")
     private int proizvodaNaSkladistu;
 
     private String proizvodac;
 
     @Transient
     private MultipartFile slika;
+
+    @OneToMany(mappedBy = "proizvod", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CartItem> cartItemList;
 
     public MultipartFile getSlika() {
         return slika;
@@ -109,5 +121,13 @@ public class Proizvod {
 
     public void setProizvodac(String proizvodac) {
         this.proizvodac = proizvodac;
+    }
+
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
     }
 }

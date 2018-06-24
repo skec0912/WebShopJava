@@ -5,6 +5,7 @@ import com.electronicwebshop.model.Proizvod;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.SessionFactoryObserver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,40 +19,46 @@ public class ProizvodDalImpl implements ProizvodDal {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void addProizvod(Proizvod proizvod) {
 
+    @Override
+    public List<Proizvod> getProizvodList() {
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(proizvod);
+        Query query = session.createQuery("from Proizvod");
+        List<Proizvod> proizvodList = query.list();
+
         session.flush();
+
+        return proizvodList;
     }
 
-    public void editProizvod(Proizvod proizvod) {
-
+    @Override
+    public Proizvod getProizvodById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(proizvod);
-        session.flush();
-    }
-
-    public Proizvod getProizvodById(String proizvodId) {
-        Session session = sessionFactory.getCurrentSession();
-        Proizvod proizvod = (Proizvod) session.get(Proizvod.class, proizvodId);
+        Proizvod proizvod = (Proizvod) session.get(Proizvod.class,id);
         session.flush();
 
         return proizvod;
     }
 
-    public List<Proizvod> getAllProizvod() {
+    @Override
+    public void addProizvod(Proizvod proizvod) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Proizvod");
-        List<Proizvod> proizvodi = query.list();
+        session.saveOrUpdate(proizvod);
         session.flush();
 
-        return proizvodi;
     }
 
-    public void deleteProizvod(String id) {
+    @Override
+    public void editProizvod(Proizvod proizvod) {
         Session session = sessionFactory.getCurrentSession();
-        session.delete(getProizvodById(id));
+        session.saveOrUpdate(proizvod);
+        session.flush();
+    }
+
+    @Override
+    public void deleteProizvod(Proizvod proizvod) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(proizvod);
         session.flush();
     }
 }
