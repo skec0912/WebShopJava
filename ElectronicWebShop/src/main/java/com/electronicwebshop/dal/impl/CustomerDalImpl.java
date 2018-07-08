@@ -27,9 +27,13 @@ public class CustomerDalImpl implements CustomerDal {
         customer.getBillingAddress().setCustomer(customer);
         customer.getShippingAddress().setCustomer(customer);
 
-        session.saveOrUpdate(customer);
-        session.saveOrUpdate(customer.getShippingAddress());
-        session.saveOrUpdate(customer.getBillingAddress());
+        try {
+            session.saveOrUpdate(customer);
+            session.saveOrUpdate(customer.getShippingAddress());
+            session.saveOrUpdate(customer.getBillingAddress());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         Users newUser = new Users();
         newUser.setUsername(customer.getUsername());
@@ -58,11 +62,19 @@ public class CustomerDalImpl implements CustomerDal {
         return (Customer) session.get(Customer.class, customerId);
     }
 
-    public List<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomers() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Customer");
         List<Customer> customerList = query.list();
 
         return customerList;
+    }
+
+    public Customer getCustomerByUsername(String username) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Customer where username = ?");
+        query.setString(0, username);
+
+        return (Customer) query.uniqueResult();
     }
 }

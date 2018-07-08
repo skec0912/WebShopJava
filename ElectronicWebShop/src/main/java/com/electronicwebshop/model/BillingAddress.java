@@ -13,11 +13,9 @@ public class BillingAddress implements Serializable {
     @Id
     @GeneratedValue
     private int billingAddressId;
-
     private String streetName;
     private String apartmantNumber;
     private String city;
-    private String state;
     private String country;
     private String zipCode;
 
@@ -56,14 +54,6 @@ public class BillingAddress implements Serializable {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public String getCountry() {
         return country;
     }
@@ -94,7 +84,6 @@ public class BillingAddress implements Serializable {
                 "streetName='" + streetName + '\'' +
                 ", apartmantNumber='" + apartmantNumber + '\'' +
                 ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 '}';

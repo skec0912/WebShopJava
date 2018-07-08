@@ -8,7 +8,7 @@
     <context:component-scan base-package="com.electronicwebshop"/>
     <mvc:annotation-driven>
         <mvc:argument-resolvers>
-            <bean class="org.springframework.security.web.method.annotation.AuthenticationPrincipalArgumentResolver"/>
+            <bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver"/>
         </mvc:argument-resolvers>
     </mvc:annotation-driven>
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

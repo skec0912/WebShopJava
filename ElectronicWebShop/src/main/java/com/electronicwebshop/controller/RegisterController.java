@@ -17,12 +17,8 @@ public class RegisterController {
     @Autowired
     private CustomerService customerService;
 
-
     @RequestMapping("/register")
     public String registerCustomer(Model model) {
-
-
-
         Customer customer = new Customer();
         BillingAddress billingAddress = new BillingAddress();
         ShippingAddress shippingAddress = new ShippingAddress();

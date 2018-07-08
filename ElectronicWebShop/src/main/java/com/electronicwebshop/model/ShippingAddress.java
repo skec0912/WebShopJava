@@ -18,7 +18,6 @@ public class ShippingAddress implements Serializable {
     private String streetName;
     private String apartmantNumber;
     private String city;
-    private String state;
     private String country;
     private String zipCode;
 
@@ -57,14 +56,6 @@ public class ShippingAddress implements Serializable {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public String getCountry() {
         return country;
     }
@@ -95,7 +86,6 @@ public class ShippingAddress implements Serializable {
                 "streetName='" + streetName + '\'' +
                 ", apartmantNumber='" + apartmantNumber + '\'' +
                 ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 '}';

@@ -25,5 +25,8 @@ public class CustomerServiceImpl implements CustomerService {
         return customerDal.getAllCustomers();
     }
 
+    public Customer getCustomerByUsername(String username) {
+        return customerDal.getCustomerByUsername(username);
+    }
 }
 

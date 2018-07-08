@@ -55,7 +55,7 @@
 
         <div class="form-group">
             <label for="billingState">Drzava:</label>
-            <form:input path="billingAddress.state" id="billingState" cssClass="form-control"/>
+            <form:input path="billingAddress.country" id="billingState" cssClass="form-control"/>
         </div>
 
         <div class="form-group">
@@ -81,7 +81,7 @@
 
         <div class="form-group">
             <label for="shippingState">Drzava:</label>
-            <form:input path="shippingAddress.state" id="shippingState" cssClass="form-control"/>
+            <form:input path="shippingAddress.country" id="shippingState" cssClass="form-control"/>
         </div>
 
         <div class="form-group">
