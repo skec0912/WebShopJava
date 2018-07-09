@@ -18,10 +18,10 @@ public class OrderController {
     private CustomerOrderService customerOrderService;
 
     @RequestMapping("/order/{cartId}")
-        public String crateOrdeer (@PathVariable("cartId") int cartId){
-            CustomerOrder customerOrder = new CustomerOrder();
-            Cart cart = cartService.getCartById(cartId);
-            customerOrder.setCart(cart);
+    public String createOrder(@PathVariable("cartId") int cartId) {
+        CustomerOrder customerOrder = new CustomerOrder();
+        Cart cart = cartService.getCartById(cartId);
+        customerOrder.setCart(cart);
 
         Customer customer = cart.getCustomer();
         customerOrder.setCustomer(customer);
@@ -29,5 +29,7 @@ public class OrderController {
 
         customerOrder.setShippingAddress(customer.getShippingAddress());
         customerOrderService.addCustomerOrder(customerOrder);
-        }
+
+        return "redirect:/checkout?cartId=" +cartId;
+    }
 }
