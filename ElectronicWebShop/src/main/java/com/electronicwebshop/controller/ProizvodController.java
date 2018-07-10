@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,7 +20,7 @@ public class ProizvodController {
     @Autowired
     private ProizvodService proizvodService;
 
-    @RequestMapping("/listaProizvoda")
+    @RequestMapping("/listaProizvoda/all")
     public String getProducts(Model model) {
         List<Proizvod> proizvodi = proizvodService.getProizvodList();
         model.addAttribute("proizvodi", proizvodi);
@@ -34,5 +35,14 @@ public class ProizvodController {
         model.addAttribute("proizvod",proizvod);
 
         return "detaljiProizvoda";
+    }
+
+    @RequestMapping("/listaProizvoda")
+    public String getProductByCategory(@RequestParam("searchCondition")String searchCondition, Model model){
+        List<Proizvod> proizvodi = proizvodService.getProizvodList();
+        model.addAttribute("proizvodi", proizvodi);
+
+        model.addAttribute("searchCondition",searchCondition);
+        return "listaProizvoda";
     }
 }
