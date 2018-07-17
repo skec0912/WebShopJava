@@ -7,11 +7,6 @@
             <h1>Dobrodosao Administratore :)</h1>
             <p class="lead">Ovo je stranica za administratore ducana</p>
         </div>
-        <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <h2>Welcome:${pageContext.request.userPrincipal.name} | <a href="<c:url value="/j_spring_security_logout"/>">Logout</a>
-        </h2>
-        </c:if>
-        <br><br>
         <h3>
             <a href="<c:url value="/admin/popisProizvoda"/> ">Product inventory</a>
         </h3>
@@ -30,5 +25,8 @@
         </h3>
         <p>Ovdje mozete pregledavati informacije o loginima.</p>
 
-
+        <br>
+        <br>
+        <br>
+        <br>
         <%@include file="/WEB-INF/views/template/footer.jsp" %>

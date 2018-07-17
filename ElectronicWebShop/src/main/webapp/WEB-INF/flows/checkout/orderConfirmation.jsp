@@ -88,7 +88,7 @@
                         <input type="hidden" name="_flowExecutionKey">
 
                         <br><br>
-                        <button class="btn btn-default" name="_eventId_backToCollectShippingDetail">Back</button>
+                        <button class="btn btn-default" name="_eventId_backToCollectCustomerInfo">Back</button>
                         <input type="submit" value="Submit order" class="btn btn-default"
                                name="_eventId_orderConfirmed"/>
                         <div id="paypal-button"></div>

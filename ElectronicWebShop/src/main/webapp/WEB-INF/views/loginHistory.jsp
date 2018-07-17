@@ -5,8 +5,7 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Svi kupci</h1>
-            <p class="lead">Login history</p>
+            <h1>Login history</h1>
         </div>
         <table class="table table-striped table-hover">
             <thead>
