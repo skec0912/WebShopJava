@@ -1,8 +1,10 @@
 package com.electronicwebshop.controller.admin;
 
 import com.electronicwebshop.model.Customer;
+import com.electronicwebshop.model.LoginHistory;
 import com.electronicwebshop.model.Proizvod;
 import com.electronicwebshop.service.CustomerService;
+import com.electronicwebshop.service.LoginHistoryService;
 import com.electronicwebshop.service.ProizvodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,9 @@ public class AdminHome {
 
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private LoginHistoryService loginHistoryService;
 
     @RequestMapping
     public String adminPage() {
@@ -37,6 +42,13 @@ public class AdminHome {
         List<Customer> customerList = customerService.getAllCustomers();
         model.addAttribute("customerList",customerList);
         return "customerManagement";
+    }
+
+    @RequestMapping("/loginHistory")
+    public String loginHistory(Model model){
+        List<LoginHistory> loginHistoriesList = loginHistoryService.getAllHistories();
+        model.addAttribute("loginHistoriesList",loginHistoriesList);
+        return "loginHistory";
     }
 }
 

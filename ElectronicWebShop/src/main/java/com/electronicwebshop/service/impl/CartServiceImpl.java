@@ -12,9 +12,12 @@ public class CartServiceImpl implements CartService {
     @Autowired
     private CartDal cartDal;
 
+    @Override
     public Cart getCartById(int cartId){
         return cartDal.getCartById(cartId);
     }
+
+    @Override
     public void update(Cart cart){
         cartDal.update(cart);
     }

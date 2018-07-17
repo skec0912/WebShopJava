@@ -7,7 +7,7 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1>Hvala na kupnji :) </h1>
-                    <p>Vaša narudzba ce Vam biti dostavljena kroz 2 radna dana!</p>
+                    <p>Vasa narudzba ce Vam biti dostavljena kroz 2 radna dana!</p>
                 </div>
             </div>
         </section>

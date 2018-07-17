@@ -7,7 +7,7 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1 class="alert alert-danger">Checkout cancelled </h1>
-                    <p>Vaša narudzba je otkazana. Nastavite kupnju.</p>
+                    <p>Vasa narudzba je otkazana. Nastavite kupnju.</p>
                 </div>
             </div>
         </section>

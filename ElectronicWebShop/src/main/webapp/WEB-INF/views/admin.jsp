@@ -12,12 +12,23 @@
         </h2>
         </c:if>
         <br><br>
+        <h3>
+            <a href="<c:url value="/admin/popisProizvoda"/> ">Product inventory</a>
+        </h3>
+        <p>Ovdje mozete uredivati popis proizvoda</p>
 
+        <br>
 
         <h3>
             <a href="<c:url value='/admin/customer'/>">Customer Management</a>
         </h3>
-
         <p>Ovdje mozete pregledavati informacije o kupcima.</p>
+
+        <br>
+        <h3>
+            <a href="<c:url value='/admin/loginHistory'/>">Login History</a>
+        </h3>
+        <p>Ovdje mozete pregledavati informacije o loginima.</p>
+
 
         <%@include file="/WEB-INF/views/template/footer.jsp" %>

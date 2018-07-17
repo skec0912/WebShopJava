@@ -54,7 +54,7 @@
             <form:input path="cart.customer.billingAddress.zipCode" id="zipCode" cssClass="form-control"/>
         </div>
 
-        <<input type="hidden" name="_flowExecutionKey" >
+        <input type="hidden" name="_flowExecutionKey" >
 
         <br><br>
         <input type="submit" value="Next" class="btn btn-default" name="_eventId_customerInfoCollected"/>

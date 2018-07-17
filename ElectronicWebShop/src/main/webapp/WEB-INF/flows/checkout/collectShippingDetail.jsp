@@ -36,11 +36,11 @@
             <form:input path="cart.customer.shippingAddress.zipCode" id="zipCode" cssClass="form-control"/>
         </div>
 
-        <<input type="hidden" name="_flowExecutionKey" >
+        <input type="hidden" name="_flowExecutionKey" >
 
         <br><br>
         <button class="btn btn-default" name="_eventId_backToCollectCustomerInfo">Back</button>
-        <input type="submit" value="Next" class="btn btn-default" name="_eventId_shippingDetailCollected/>
+        <input type="submit" value="Next" class="btn btn-default" name="_eventId_shippingDetailCollected"/>
         <button class="btn btn-default" name="_eventId_cancel">Cancel</button>
         </form:form>
 

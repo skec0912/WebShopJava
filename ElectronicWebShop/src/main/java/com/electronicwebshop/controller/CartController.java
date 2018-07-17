@@ -25,9 +25,9 @@ public class CartController {
         return "redirect:/customer/cart/" + cartId;
     }
 
-    @RequestMapping("//{cartId}")
-    public String getCartRedirect(@PathVariable(value = "cartId") int cartId, Model model){
-        model.addAttribute("cartId",cartId);
+    @RequestMapping("/{cartId}")
+    public String getCartRedirect(@PathVariable(value = "cartId") int cartId, Model model) {
+        model.addAttribute("cartId", cartId);
 
         return "cart";
     }
